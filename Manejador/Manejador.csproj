@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManejadorSecante.cs" />
+    <Compile Include="ManejadorFalsaPosicion.cs" />
     <Compile Include="ManejadorBiseccion.cs" />
     <Compile Include="ManejadorFuncion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

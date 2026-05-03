@@ -57,12 +57,19 @@ namespace Manejador
 
         private string AgregarMultiplicacionImplicita(string expr)
         {
+            string[] funciones = { "arctan", "arcsin", "arccos", "sin", "cos", "tan", "sqrt", "log10", "log", "ln", "cot", "exp", "abs" };
+            for (int i = 0; i < funciones.Length; i++)
+                expr = expr.Replace(funciones[i], $"§{i}§");
             expr = Regex.Replace(expr, @"(\d)([a-zA-Z])", "$1*$2");
             expr = Regex.Replace(expr, @"([a-zA-Z])(\d)", "$1*$2");
             expr = Regex.Replace(expr, @"\)\(", ")*(");
             expr = Regex.Replace(expr, @"(\d)\(", "$1*(");
             expr = Regex.Replace(expr, @"\)([a-zA-Z])", ")*$1");
-            expr = Regex.Replace(expr, @"([a-zA-Z])\(", "$1*(");
+
+  
+            for (int i = 0; i < funciones.Length; i++)
+                expr = expr.Replace($"§{i}§", funciones[i]);
+
             return expr;
         }
 

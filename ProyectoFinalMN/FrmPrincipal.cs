@@ -41,7 +41,31 @@ namespace ProyectoFinalMN
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+           
+        }
 
+        private void BtnFalsaPoscicion_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            panel2.BringToFront();
+
+            UCFalsaPos uc = new UCFalsaPos();
+            uc.Dock = DockStyle.Fill;
+
+            panel2.Controls.Add(uc);
+            uc.BringToFront();
+        }
+
+        private void BtnSecante_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            panel2.BringToFront();
+
+            UCSecante uc = new UCSecante();
+            uc.Dock = DockStyle.Fill;
+
+            panel2.Controls.Add(uc);
+            uc.BringToFront();
         }
     }
 }

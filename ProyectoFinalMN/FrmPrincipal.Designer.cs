@@ -32,6 +32,8 @@
             this.BtnFuncion = new System.Windows.Forms.Button();
             this.BtnBiseccion = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnFalsaPoscicion = new System.Windows.Forms.Button();
+            this.BtnSecante = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,11 +72,35 @@
             this.panel2.Size = new System.Drawing.Size(1122, 650);
             this.panel2.TabIndex = 3;
             // 
+            // BtnFalsaPoscicion
+            // 
+            this.BtnFalsaPoscicion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnFalsaPoscicion.Location = new System.Drawing.Point(370, 12);
+            this.BtnFalsaPoscicion.Name = "BtnFalsaPoscicion";
+            this.BtnFalsaPoscicion.Size = new System.Drawing.Size(133, 59);
+            this.BtnFalsaPoscicion.TabIndex = 4;
+            this.BtnFalsaPoscicion.Text = "FALSA POSICION";
+            this.BtnFalsaPoscicion.UseVisualStyleBackColor = true;
+            this.BtnFalsaPoscicion.Click += new System.EventHandler(this.BtnFalsaPoscicion_Click);
+            // 
+            // BtnSecante
+            // 
+            this.BtnSecante.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnSecante.Location = new System.Drawing.Point(560, 12);
+            this.BtnSecante.Name = "BtnSecante";
+            this.BtnSecante.Size = new System.Drawing.Size(133, 59);
+            this.BtnSecante.TabIndex = 5;
+            this.BtnSecante.Text = "SECANTE";
+            this.BtnSecante.UseVisualStyleBackColor = true;
+            this.BtnSecante.Click += new System.EventHandler(this.BtnSecante_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 751);
+            this.Controls.Add(this.BtnSecante);
+            this.Controls.Add(this.BtnFalsaPoscicion);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.BtnBiseccion);
             this.Controls.Add(this.BtnFuncion);
@@ -92,6 +118,8 @@
         private System.Windows.Forms.Button BtnFuncion;
         private System.Windows.Forms.Button BtnBiseccion;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button BtnFalsaPoscicion;
+        private System.Windows.Forms.Button BtnSecante;
     }
 }
 

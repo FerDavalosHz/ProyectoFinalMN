@@ -45,7 +45,7 @@
             // 
             // TxtRaiz
             // 
-            this.TxtRaiz.Location = new System.Drawing.Point(398, 370);
+            this.TxtRaiz.Location = new System.Drawing.Point(418, 358);
             this.TxtRaiz.Multiline = true;
             this.TxtRaiz.Name = "TxtRaiz";
             this.TxtRaiz.ReadOnly = true;
@@ -55,7 +55,7 @@
             // Raiz
             // 
             this.Raiz.AutoSize = true;
-            this.Raiz.Location = new System.Drawing.Point(364, 383);
+            this.Raiz.Location = new System.Drawing.Point(384, 371);
             this.Raiz.Name = "Raiz";
             this.Raiz.Size = new System.Drawing.Size(28, 13);
             this.Raiz.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.DtgDatos.AllowUserToResizeRows = false;
             this.DtgDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatos.Location = new System.Drawing.Point(367, 15);
+            this.DtgDatos.Location = new System.Drawing.Point(369, 19);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.Size = new System.Drawing.Size(652, 333);
             this.DtgDatos.TabIndex = 2;
@@ -77,7 +77,7 @@
             // las
             // 
             this.las.AutoSize = true;
-            this.las.Location = new System.Drawing.Point(30, 55);
+            this.las.Location = new System.Drawing.Point(50, 43);
             this.las.Name = "las";
             this.las.Size = new System.Drawing.Size(78, 13);
             this.las.TabIndex = 3;
@@ -86,7 +86,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 96);
+            this.label1.Location = new System.Drawing.Point(50, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 4;
@@ -94,14 +94,14 @@
             // 
             // TxtInferior
             // 
-            this.TxtInferior.Location = new System.Drawing.Point(125, 52);
+            this.TxtInferior.Location = new System.Drawing.Point(145, 40);
             this.TxtInferior.Name = "TxtInferior";
             this.TxtInferior.Size = new System.Drawing.Size(131, 20);
             this.TxtInferior.TabIndex = 5;
             // 
             // TxtSuperior
             // 
-            this.TxtSuperior.Location = new System.Drawing.Point(125, 93);
+            this.TxtSuperior.Location = new System.Drawing.Point(145, 81);
             this.TxtSuperior.Name = "TxtSuperior";
             this.TxtSuperior.Size = new System.Drawing.Size(131, 20);
             this.TxtSuperior.TabIndex = 6;
@@ -109,7 +109,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 133);
+            this.label2.Location = new System.Drawing.Point(50, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 7;
@@ -117,7 +117,7 @@
             // 
             // TxtTolerancia
             // 
-            this.TxtTolerancia.Location = new System.Drawing.Point(125, 126);
+            this.TxtTolerancia.Location = new System.Drawing.Point(145, 114);
             this.TxtTolerancia.Name = "TxtTolerancia";
             this.TxtTolerancia.Size = new System.Drawing.Size(131, 20);
             this.TxtTolerancia.TabIndex = 8;
@@ -125,7 +125,7 @@
             // lasdal
             // 
             this.lasdal.AutoSize = true;
-            this.lasdal.Location = new System.Drawing.Point(33, 176);
+            this.lasdal.Location = new System.Drawing.Point(53, 164);
             this.lasdal.Name = "lasdal";
             this.lasdal.Size = new System.Drawing.Size(150, 13);
             this.lasdal.TabIndex = 9;
@@ -133,14 +133,14 @@
             // 
             // TxtIter
             // 
-            this.TxtIter.Location = new System.Drawing.Point(189, 173);
+            this.TxtIter.Location = new System.Drawing.Point(209, 161);
             this.TxtIter.Name = "TxtIter";
             this.TxtIter.Size = new System.Drawing.Size(67, 20);
             this.TxtIter.TabIndex = 10;
             // 
             // BtnCalcular
             // 
-            this.BtnCalcular.Location = new System.Drawing.Point(181, 225);
+            this.BtnCalcular.Location = new System.Drawing.Point(201, 213);
             this.BtnCalcular.Name = "BtnCalcular";
             this.BtnCalcular.Size = new System.Drawing.Size(75, 23);
             this.BtnCalcular.TabIndex = 11;

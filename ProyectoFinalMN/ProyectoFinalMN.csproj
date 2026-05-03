@@ -77,11 +77,23 @@
     <Compile Include="UCConfiguracion.Designer.cs">
       <DependentUpon>UCConfiguracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCFalsaPos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFalsaPos.Designer.cs">
+      <DependentUpon>UCFalsaPos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCFUNC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCFUNC.Designer.cs">
       <DependentUpon>UCFUNC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSecante.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSecante.Designer.cs">
+      <DependentUpon>UCSecante.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -101,8 +113,14 @@
     <EmbeddedResource Include="UCConfiguracion.resx">
       <DependentUpon>UCConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCFalsaPos.resx">
+      <DependentUpon>UCFalsaPos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCFUNC.resx">
       <DependentUpon>UCFUNC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSecante.resx">
+      <DependentUpon>UCSecante.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

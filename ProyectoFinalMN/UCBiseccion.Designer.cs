@@ -42,7 +42,8 @@
             this.BtnCalcular = new System.Windows.Forms.Button();
             this.pGrafica = new System.Windows.Forms.Panel();
             this.BtnGraficar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnProblema = new System.Windows.Forms.Button();
+            this.rIA = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,20 +170,31 @@
             this.BtnGraficar.Visible = false;
             this.BtnGraficar.Click += new System.EventHandler(this.BtnGraficar_Click);
             // 
-            // button1
+            // BtnProblema
             // 
-            this.button1.Location = new System.Drawing.Point(18, 284);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 44);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnProblema.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnProblema.Location = new System.Drawing.Point(4, 235);
+            this.BtnProblema.Name = "BtnProblema";
+            this.BtnProblema.Size = new System.Drawing.Size(159, 44);
+            this.BtnProblema.TabIndex = 14;
+            this.BtnProblema.Text = "Generar Problema";
+            this.BtnProblema.UseVisualStyleBackColor = true;
+            this.BtnProblema.Click += new System.EventHandler(this.BtnProblema_Click);
+            // 
+            // rIA
+            // 
+            this.rIA.Location = new System.Drawing.Point(4, 285);
+            this.rIA.Name = "rIA";
+            this.rIA.Size = new System.Drawing.Size(341, 409);
+            this.rIA.TabIndex = 15;
+            this.rIA.Text = "";
             // 
             // UCBiseccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.rIA);
+            this.Controls.Add(this.BtnProblema);
             this.Controls.Add(this.BtnGraficar);
             this.Controls.Add(this.pGrafica);
             this.Controls.Add(this.BtnCalcular);
@@ -221,6 +233,7 @@
         private System.Windows.Forms.Button BtnCalcular;
         private System.Windows.Forms.Panel pGrafica;
         private System.Windows.Forms.Button BtnGraficar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnProblema;
+        private System.Windows.Forms.RichTextBox rIA;
     }
 }

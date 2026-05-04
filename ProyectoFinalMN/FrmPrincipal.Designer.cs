@@ -34,7 +34,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnFalsaPoscicion = new System.Windows.Forms.Button();
             this.BtnSecante = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnNewtonR = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,22 +95,23 @@
             this.BtnSecante.UseVisualStyleBackColor = true;
             this.BtnSecante.Click += new System.EventHandler(this.BtnSecante_Click);
             // 
-            // button1
+            // BtnNewtonR
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(735, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 59);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "NEWTON RAPHSON";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnNewtonR.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnNewtonR.Location = new System.Drawing.Point(735, 12);
+            this.BtnNewtonR.Name = "BtnNewtonR";
+            this.BtnNewtonR.Size = new System.Drawing.Size(133, 59);
+            this.BtnNewtonR.TabIndex = 6;
+            this.BtnNewtonR.Text = "NEWTON RAPHSON";
+            this.BtnNewtonR.UseVisualStyleBackColor = true;
+            this.BtnNewtonR.Click += new System.EventHandler(this.BtnNewtonR_Click);
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 751);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnNewtonR);
             this.Controls.Add(this.BtnSecante);
             this.Controls.Add(this.BtnFalsaPoscicion);
             this.Controls.Add(this.panel2);
@@ -132,7 +133,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnFalsaPoscicion;
         private System.Windows.Forms.Button BtnSecante;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnNewtonR;
     }
 }
 

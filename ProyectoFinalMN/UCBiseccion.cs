@@ -16,6 +16,7 @@ namespace ProyectoFinalMN
 
         ManejadorBiseccion MB;
         ManejadorGrafica mg;
+        ManejadorQIA mQUIA;
         double a;
         double b;
         public UCBiseccion()
@@ -24,6 +25,7 @@ namespace ProyectoFinalMN
             MB = new ManejadorBiseccion();
             mg = new ManejadorGrafica();
             mg.InicializarGrafica(pGrafica);
+            mQUIA = new ManejadorQIA();
 
         }
 
@@ -75,6 +77,14 @@ namespace ProyectoFinalMN
         {
             mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xm");
 
+        }
+
+        private void BtnProblema_Click(object sender, EventArgs e)
+        {
+            rIA.Text = "Generando problema...";
+            mQUIA.GenerarProblemaPro(
+              rIA, FrmPrincipal.FX, "Bisección", $"a={TxtInferior.Text}, b={TxtSuperior.Text}, tol={TxtTolerancia.Text}, iter={TxtIter.Text}, raiz= {TxtRaiz}"
+            );
         }
     }
 }

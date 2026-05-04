@@ -40,6 +40,8 @@
             this.DtgDatos = new System.Windows.Forms.DataGridView();
             this.Raiz = new System.Windows.Forms.Label();
             this.TxtRaiz = new System.Windows.Forms.TextBox();
+            this.pGrafica = new System.Windows.Forms.Panel();
+            this.BtnGraficar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,10 +150,30 @@
             this.TxtRaiz.Size = new System.Drawing.Size(165, 37);
             this.TxtRaiz.TabIndex = 24;
             // 
+            // pGrafica
+            // 
+            this.pGrafica.Location = new System.Drawing.Point(373, 408);
+            this.pGrafica.Name = "pGrafica";
+            this.pGrafica.Size = new System.Drawing.Size(652, 286);
+            this.pGrafica.TabIndex = 36;
+            // 
+            // BtnGraficar
+            // 
+            this.BtnGraficar.Location = new System.Drawing.Point(908, 365);
+            this.BtnGraficar.Name = "BtnGraficar";
+            this.BtnGraficar.Size = new System.Drawing.Size(117, 37);
+            this.BtnGraficar.TabIndex = 37;
+            this.BtnGraficar.Text = "Graficar";
+            this.BtnGraficar.UseVisualStyleBackColor = true;
+            this.BtnGraficar.Visible = false;
+            this.BtnGraficar.Click += new System.EventHandler(this.BtnGraficar_Click);
+            // 
             // UCSecante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BtnGraficar);
+            this.Controls.Add(this.pGrafica);
             this.Controls.Add(this.BtnCalcular);
             this.Controls.Add(this.TxtIter);
             this.Controls.Add(this.lasdal);
@@ -165,7 +187,7 @@
             this.Controls.Add(this.Raiz);
             this.Controls.Add(this.TxtRaiz);
             this.Name = "UCSecante";
-            this.Size = new System.Drawing.Size(1042, 697);
+            this.Size = new System.Drawing.Size(1042, 718);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,5 +208,7 @@
         private System.Windows.Forms.DataGridView DtgDatos;
         private System.Windows.Forms.Label Raiz;
         private System.Windows.Forms.TextBox TxtRaiz;
+        private System.Windows.Forms.Panel pGrafica;
+        private System.Windows.Forms.Button BtnGraficar;
     }
 }

@@ -11,46 +11,50 @@ using Manejador;
 
 namespace ProyectoFinalMN
 {
-    public partial class UCSecante : UserControl
+    public partial class UCNewtonRaphson : UserControl
     {
-        ManejadorSecante MS;
+
+        ManejadorNewtonRaphson Mr;
         ManejadorGrafica mg;
         double a;
-        double b;
-        public UCSecante()
+
+        public UCNewtonRaphson()
         {
             InitializeComponent();
-            MS = new ManejadorSecante();
+            Mr = new ManejadorNewtonRaphson();
             mg = new ManejadorGrafica();
             mg.InicializarGrafica(pGrafica);
         }
 
-     
-
-        private void BtnCalcular_Click_1(object sender, EventArgs e)
+        private void BtnCalcular_Click(object sender, EventArgs e)
         {
             MessageBox.Show(FrmPrincipal.FX);
 
              a = double.Parse(TxtX0.Text);
-             b = double.Parse(TxtX1.Text);
             double tol = double.Parse(TxtTolerancia.Text);
             int iter = int.Parse(TxtIter.Text);
 
-            MS.CalcularSecante(
+            ManejadorFuncion mf = new ManejadorFuncion();
+
+            double fa = mf.Evaluar(FrmPrincipal.FX, a);
+  
+        
+
+            Mr.CalcularNewtonRaphson(
                 FrmPrincipal.FX,
                 a,
-                b,
                 tol,
                 iter,
                 DtgDatos,
                 TxtRaiz
             );
+
             BtnGraficar.Visible = true;
         }
 
         private void BtnGraficar_Click(object sender, EventArgs e)
         {
-            mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xk");
+            mg.Graficar(FrmPrincipal.FX, a, a + 3, double.Parse(TxtRaiz.Text), DtgDatos, "xk");
         }
     }
 }

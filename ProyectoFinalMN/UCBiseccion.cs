@@ -15,18 +15,24 @@ namespace ProyectoFinalMN
     {
 
         ManejadorBiseccion MB;
+        ManejadorGrafica mg;
+        double a;
+        double b;
         public UCBiseccion()
         {
             InitializeComponent();
             MB = new ManejadorBiseccion();
+            mg = new ManejadorGrafica();
+            mg.InicializarGrafica(pGrafica);
+
         }
 
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
             MessageBox.Show(FrmPrincipal.FX);
           
-                double a = double.Parse(TxtInferior.Text);
-                double b = double.Parse(TxtSuperior.Text);
+                 a = double.Parse(TxtInferior.Text);
+                 b = double.Parse(TxtSuperior.Text);
                 double tol = double.Parse(TxtTolerancia.Text);
                 int iter = int.Parse(TxtIter.Text);
 
@@ -35,13 +41,23 @@ namespace ProyectoFinalMN
                 double fa = mf.Evaluar(FrmPrincipal.FX, a);
                 double fb = mf.Evaluar(FrmPrincipal.FX, b);
 
-                if (fa * fb > 0)
-                {
-                    MessageBox.Show("El intervalo NO es válido: f(a) y f(b) deben tener signos opuestos.");
-                    return;
-                }
+            if (fa * fb > 0)
+            {
+                MessageBox.Show(
+                    $"Intervalo inválido.\n\n" +
+                    $"Al evaluar la función:\n" +
+                    $"f(a) = f({a}) = {fa}\n" +
+                    $"f(b) = f({b}) = {fb}\n\n" +
+                    $"Ambos valores tienen el mismo signo, por lo que no se garantiza la existencia de una raíz en el intervalo.\n" +
+                    $"Intenta con valores de 'a' y 'b' donde la función cambie de signo.",
+                    "Error de intervalo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
 
-                MB.CalcularBiseccion(
+            MB.CalcularBiseccion(
                     FrmPrincipal.FX,
                     a,
                     b,
@@ -50,8 +66,15 @@ namespace ProyectoFinalMN
                     DtgDatos,
                     TxtRaiz
                 );
-            
-           
+
+
+            BtnGraficar.Visible = true;
+        }
+
+        private void BtnGraficar_Click(object sender, EventArgs e)
+        {
+            mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xm");
+
         }
     }
 }

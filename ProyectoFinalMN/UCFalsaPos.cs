@@ -14,10 +14,15 @@ namespace ProyectoFinalMN
     public partial class UCFalsaPos : UserControl
     {
         ManejadorFalsaPosicion MFP;
+        ManejadorGrafica mg;
+        double a;
+        double b;
         public UCFalsaPos()
         {
             InitializeComponent();
             MFP = new ManejadorFalsaPosicion();
+            mg = new ManejadorGrafica();
+            mg.InicializarGrafica(pGrafica);
         }
 
      
@@ -38,7 +43,17 @@ namespace ProyectoFinalMN
 
             if (fa * fb > 0)
             {
-                MessageBox.Show("El intervalo NO es válido: f(a) y f(b) deben tener signos opuestos.");
+                MessageBox.Show(
+                    $"Intervalo inválido.\n\n" +
+                    $"Al evaluar la función:\n" +
+                    $"f(a) = f({a}) = {fa}\n" +
+                    $"f(b) = f({b}) = {fb}\n\n" +
+                    $"Ambos valores tienen el mismo signo, por lo que no se garantiza la existencia de una raíz en el intervalo.\n" +
+                    $"Intenta con valores de 'a' y 'b' donde la función cambie de signo.",
+                    "Error de intervalo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
                 return;
             }
 
@@ -51,7 +66,12 @@ namespace ProyectoFinalMN
                 DtgDatos,
                 TxtRaiz
             );
+            BtnGraficar.Visible = true;
+        }
 
+        private void BtnGraficar_Click(object sender, EventArgs e)
+        {
+            mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xm");
         }
     }
 }

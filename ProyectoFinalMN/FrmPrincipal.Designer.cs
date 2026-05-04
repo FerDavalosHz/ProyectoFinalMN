@@ -34,6 +34,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnFalsaPoscicion = new System.Windows.Forms.Button();
             this.BtnSecante = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,7 +76,7 @@
             // BtnFalsaPoscicion
             // 
             this.BtnFalsaPoscicion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnFalsaPoscicion.Location = new System.Drawing.Point(370, 12);
+            this.BtnFalsaPoscicion.Location = new System.Drawing.Point(365, 12);
             this.BtnFalsaPoscicion.Name = "BtnFalsaPoscicion";
             this.BtnFalsaPoscicion.Size = new System.Drawing.Size(133, 59);
             this.BtnFalsaPoscicion.TabIndex = 4;
@@ -86,7 +87,7 @@
             // BtnSecante
             // 
             this.BtnSecante.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnSecante.Location = new System.Drawing.Point(560, 12);
+            this.BtnSecante.Location = new System.Drawing.Point(550, 12);
             this.BtnSecante.Name = "BtnSecante";
             this.BtnSecante.Size = new System.Drawing.Size(133, 59);
             this.BtnSecante.TabIndex = 5;
@@ -94,11 +95,22 @@
             this.BtnSecante.UseVisualStyleBackColor = true;
             this.BtnSecante.Click += new System.EventHandler(this.BtnSecante_Click);
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(735, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 59);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "NEWTON RAPHSON";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 751);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnSecante);
             this.Controls.Add(this.BtnFalsaPoscicion);
             this.Controls.Add(this.panel2);
@@ -120,6 +132,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnFalsaPoscicion;
         private System.Windows.Forms.Button BtnSecante;
+        private System.Windows.Forms.Button button1;
     }
 }
 

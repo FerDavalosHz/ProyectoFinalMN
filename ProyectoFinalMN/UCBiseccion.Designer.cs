@@ -40,6 +40,9 @@
             this.lasdal = new System.Windows.Forms.Label();
             this.TxtIter = new System.Windows.Forms.TextBox();
             this.BtnCalcular = new System.Windows.Forms.Button();
+            this.pGrafica = new System.Windows.Forms.Panel();
+            this.BtnGraficar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,10 +151,40 @@
             this.BtnCalcular.UseVisualStyleBackColor = true;
             this.BtnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
+            // pGrafica
+            // 
+            this.pGrafica.Location = new System.Drawing.Point(369, 401);
+            this.pGrafica.Name = "pGrafica";
+            this.pGrafica.Size = new System.Drawing.Size(652, 293);
+            this.pGrafica.TabIndex = 12;
+            // 
+            // BtnGraficar
+            // 
+            this.BtnGraficar.Location = new System.Drawing.Point(904, 358);
+            this.BtnGraficar.Name = "BtnGraficar";
+            this.BtnGraficar.Size = new System.Drawing.Size(117, 37);
+            this.BtnGraficar.TabIndex = 13;
+            this.BtnGraficar.Text = "Graficar";
+            this.BtnGraficar.UseVisualStyleBackColor = true;
+            this.BtnGraficar.Visible = false;
+            this.BtnGraficar.Click += new System.EventHandler(this.BtnGraficar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(18, 284);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 44);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // UCBiseccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnGraficar);
+            this.Controls.Add(this.pGrafica);
             this.Controls.Add(this.BtnCalcular);
             this.Controls.Add(this.TxtIter);
             this.Controls.Add(this.lasdal);
@@ -165,7 +198,7 @@
             this.Controls.Add(this.Raiz);
             this.Controls.Add(this.TxtRaiz);
             this.Name = "UCBiseccion";
-            this.Size = new System.Drawing.Size(1042, 697);
+            this.Size = new System.Drawing.Size(1042, 718);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,5 +219,8 @@
         private System.Windows.Forms.Label lasdal;
         private System.Windows.Forms.TextBox TxtIter;
         private System.Windows.Forms.Button BtnCalcular;
+        private System.Windows.Forms.Panel pGrafica;
+        private System.Windows.Forms.Button BtnGraficar;
+        private System.Windows.Forms.Button button1;
     }
 }

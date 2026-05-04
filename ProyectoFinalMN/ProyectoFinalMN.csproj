@@ -89,6 +89,12 @@
     <Compile Include="UCFUNC.Designer.cs">
       <DependentUpon>UCFUNC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCNewtonRaphson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNewtonRaphson.Designer.cs">
+      <DependentUpon>UCNewtonRaphson.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCSecante.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCFUNC.resx">
       <DependentUpon>UCFUNC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNewtonRaphson.resx">
+      <DependentUpon>UCNewtonRaphson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCSecante.resx">
       <DependentUpon>UCSecante.cs</DependentUpon>

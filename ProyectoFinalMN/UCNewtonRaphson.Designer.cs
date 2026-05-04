@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalMN
 {
-    partial class UCFalsaPos
+    partial class UCNewtonRaphson
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -32,9 +32,7 @@
             this.TxtIter = new System.Windows.Forms.TextBox();
             this.lasdal = new System.Windows.Forms.Label();
             this.TxtTolerancia = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtSuperior = new System.Windows.Forms.TextBox();
-            this.TxtInferior = new System.Windows.Forms.TextBox();
+            this.TxtX0 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.las = new System.Windows.Forms.Label();
             this.DtgDatos = new System.Windows.Forms.DataGridView();
@@ -47,17 +45,17 @@
             // 
             // BtnCalcular
             // 
-            this.BtnCalcular.Location = new System.Drawing.Point(201, 213);
+            this.BtnCalcular.Location = new System.Drawing.Point(187, 192);
             this.BtnCalcular.Name = "BtnCalcular";
-            this.BtnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.BtnCalcular.Size = new System.Drawing.Size(75, 28);
             this.BtnCalcular.TabIndex = 23;
             this.BtnCalcular.Text = "Calcular";
             this.BtnCalcular.UseVisualStyleBackColor = true;
-            this.BtnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click_1);
+            this.BtnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
             // 
             // TxtIter
             // 
-            this.TxtIter.Location = new System.Drawing.Point(209, 161);
+            this.TxtIter.Location = new System.Drawing.Point(195, 142);
             this.TxtIter.Name = "TxtIter";
             this.TxtIter.Size = new System.Drawing.Size(67, 20);
             this.TxtIter.TabIndex = 22;
@@ -65,7 +63,7 @@
             // lasdal
             // 
             this.lasdal.AutoSize = true;
-            this.lasdal.Location = new System.Drawing.Point(53, 164);
+            this.lasdal.Location = new System.Drawing.Point(39, 145);
             this.lasdal.Name = "lasdal";
             this.lasdal.Size = new System.Drawing.Size(150, 13);
             this.lasdal.TabIndex = 21;
@@ -73,51 +71,35 @@
             // 
             // TxtTolerancia
             // 
-            this.TxtTolerancia.Location = new System.Drawing.Point(145, 114);
+            this.TxtTolerancia.Location = new System.Drawing.Point(131, 95);
             this.TxtTolerancia.Name = "TxtTolerancia";
             this.TxtTolerancia.Size = new System.Drawing.Size(131, 20);
-            this.TxtTolerancia.TabIndex = 20;
+            this.TxtTolerancia.TabIndex = 18;
             // 
-            // label2
+            // TxtX0
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Tolerancia. *";
-            // 
-            // TxtSuperior
-            // 
-            this.TxtSuperior.Location = new System.Drawing.Point(145, 81);
-            this.TxtSuperior.Name = "TxtSuperior";
-            this.TxtSuperior.Size = new System.Drawing.Size(131, 20);
-            this.TxtSuperior.TabIndex = 18;
-            // 
-            // TxtInferior
-            // 
-            this.TxtInferior.Location = new System.Drawing.Point(145, 40);
-            this.TxtInferior.Name = "TxtInferior";
-            this.TxtInferior.Size = new System.Drawing.Size(131, 20);
-            this.TxtInferior.TabIndex = 17;
+            this.TxtX0.Location = new System.Drawing.Point(131, 54);
+            this.TxtX0.Name = "TxtX0";
+            this.TxtX0.Size = new System.Drawing.Size(131, 20);
+            this.TxtX0.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 84);
+            this.label1.Location = new System.Drawing.Point(36, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Limite superior. *";
+            this.label1.Text = "Tolerancia %   .*";
             // 
             // las
             // 
             this.las.AutoSize = true;
-            this.las.Location = new System.Drawing.Point(50, 43);
+            this.las.Location = new System.Drawing.Point(36, 57);
             this.las.Name = "las";
-            this.las.Size = new System.Drawing.Size(78, 13);
+            this.las.Size = new System.Drawing.Size(30, 13);
             this.las.TabIndex = 15;
-            this.las.Text = "Limite inferior. *";
+            this.las.Text = "X0. *";
             // 
             // DtgDatos
             // 
@@ -127,15 +109,15 @@
             this.DtgDatos.AllowUserToResizeRows = false;
             this.DtgDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatos.Location = new System.Drawing.Point(369, 19);
+            this.DtgDatos.Location = new System.Drawing.Point(355, 33);
             this.DtgDatos.Name = "DtgDatos";
-            this.DtgDatos.Size = new System.Drawing.Size(652, 333);
+            this.DtgDatos.Size = new System.Drawing.Size(652, 319);
             this.DtgDatos.TabIndex = 14;
             // 
             // Raiz
             // 
             this.Raiz.AutoSize = true;
-            this.Raiz.Location = new System.Drawing.Point(384, 371);
+            this.Raiz.Location = new System.Drawing.Point(370, 385);
             this.Raiz.Name = "Raiz";
             this.Raiz.Size = new System.Drawing.Size(28, 13);
             this.Raiz.TabIndex = 13;
@@ -143,23 +125,23 @@
             // 
             // TxtRaiz
             // 
-            this.TxtRaiz.Location = new System.Drawing.Point(418, 358);
+            this.TxtRaiz.Location = new System.Drawing.Point(404, 372);
             this.TxtRaiz.Multiline = true;
             this.TxtRaiz.Name = "TxtRaiz";
             this.TxtRaiz.ReadOnly = true;
-            this.TxtRaiz.Size = new System.Drawing.Size(165, 37);
+            this.TxtRaiz.Size = new System.Drawing.Size(165, 23);
             this.TxtRaiz.TabIndex = 12;
             // 
             // pGrafica
             // 
-            this.pGrafica.Location = new System.Drawing.Point(369, 401);
+            this.pGrafica.Location = new System.Drawing.Point(355, 404);
             this.pGrafica.Name = "pGrafica";
-            this.pGrafica.Size = new System.Drawing.Size(652, 293);
+            this.pGrafica.Size = new System.Drawing.Size(652, 290);
             this.pGrafica.TabIndex = 24;
             // 
             // BtnGraficar
             // 
-            this.BtnGraficar.Location = new System.Drawing.Point(904, 358);
+            this.BtnGraficar.Location = new System.Drawing.Point(890, 358);
             this.BtnGraficar.Name = "BtnGraficar";
             this.BtnGraficar.Size = new System.Drawing.Size(117, 37);
             this.BtnGraficar.TabIndex = 25;
@@ -168,7 +150,7 @@
             this.BtnGraficar.Visible = false;
             this.BtnGraficar.Click += new System.EventHandler(this.BtnGraficar_Click);
             // 
-            // UCFalsaPos
+            // UCNewtonRaphson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,15 +160,13 @@
             this.Controls.Add(this.TxtIter);
             this.Controls.Add(this.lasdal);
             this.Controls.Add(this.TxtTolerancia);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.TxtSuperior);
-            this.Controls.Add(this.TxtInferior);
+            this.Controls.Add(this.TxtX0);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.las);
             this.Controls.Add(this.DtgDatos);
             this.Controls.Add(this.Raiz);
             this.Controls.Add(this.TxtRaiz);
-            this.Name = "UCFalsaPos";
+            this.Name = "UCNewtonRaphson";
             this.Size = new System.Drawing.Size(1042, 718);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
@@ -200,9 +180,7 @@
         private System.Windows.Forms.TextBox TxtIter;
         private System.Windows.Forms.Label lasdal;
         private System.Windows.Forms.TextBox TxtTolerancia;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtSuperior;
-        private System.Windows.Forms.TextBox TxtInferior;
+        private System.Windows.Forms.TextBox TxtX0;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label las;
         private System.Windows.Forms.DataGridView DtgDatos;

@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Estilos.cs" />
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +113,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UCBiseccion.resx">
       <DependentUpon>UCBiseccion.cs</DependentUpon>
@@ -150,6 +152,24 @@
       <Project>{64f507f1-d0cf-4d22-b505-6abce55b998f}</Project>
       <Name>Manejador</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-inscripción-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cortar-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-grafico-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-grafico-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plot-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-gráfico-combinado-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3912.50\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3912.50\build\Microsoft.Web.WebView2.targets')" />

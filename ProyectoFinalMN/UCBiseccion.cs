@@ -86,5 +86,12 @@ namespace ProyectoFinalMN
               rIA, FrmPrincipal.FX, "Bisección", $"a={TxtInferior.Text}, b={TxtSuperior.Text}, tol={TxtTolerancia.Text}, iter={TxtIter.Text}, raiz= {TxtRaiz}"
             );
         }
+
+        private void UCBiseccion_Load(object sender, EventArgs e)
+        {
+            Estilos.RedondearBoton(BtnCalcular, 15);
+        }
+
+     
     }
 }

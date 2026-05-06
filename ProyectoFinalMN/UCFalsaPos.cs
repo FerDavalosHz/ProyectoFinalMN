@@ -15,6 +15,7 @@ namespace ProyectoFinalMN
     {
         ManejadorFalsaPosicion MFP;
         ManejadorGrafica mg;
+        ManejadorQIA mQUIA;
         double a;
         double b;
         public UCFalsaPos()
@@ -22,7 +23,9 @@ namespace ProyectoFinalMN
             InitializeComponent();
             MFP = new ManejadorFalsaPosicion();
             mg = new ManejadorGrafica();
+            mQUIA = new ManejadorQIA();
             mg.InicializarGrafica(pGrafica);
+
         }
 
      
@@ -66,12 +69,34 @@ namespace ProyectoFinalMN
                 DtgDatos,
                 TxtRaiz
             );
-            BtnGraficar.Visible = true;
+
+            Estilos.ResaltarUltimaFila(DtgDatos);
+          
+            rIA.Text = "Generando problema...";
+            mQUIA.GenerarProblemaPro(
+              rIA, FrmPrincipal.FX, "Falsa posicion", $"a={TxtInferior.Text}, b={TxtSuperior.Text}, tol={TxtTolerancia.Text}, iter={TxtIter.Text}, raiz= {TxtRaiz}"
+            );
+            mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xm");
         }
 
         private void BtnGraficar_Click(object sender, EventArgs e)
         {
             mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xm");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rIA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UCFalsaPos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

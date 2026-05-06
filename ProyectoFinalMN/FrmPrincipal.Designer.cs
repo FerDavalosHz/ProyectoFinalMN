@@ -133,7 +133,7 @@
             // pSelect
             // 
             this.pSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(146)))), ((int)(((byte)(154)))));
-            this.pSelect.Location = new System.Drawing.Point(210, 52);
+            this.pSelect.Location = new System.Drawing.Point(3, 57);
             this.pSelect.Name = "pSelect";
             this.pSelect.Size = new System.Drawing.Size(170, 8);
             this.pSelect.TabIndex = 0;

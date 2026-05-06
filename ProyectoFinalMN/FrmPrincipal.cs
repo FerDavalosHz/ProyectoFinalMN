@@ -36,6 +36,7 @@ namespace ProyectoFinalMN
         }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            this.Size = new Size(1280, 720);
             typeof(Panel).InvokeMember("DoubleBuffered",
                 System.Reflection.BindingFlags.SetProperty |
                 System.Reflection.BindingFlags.Instance |

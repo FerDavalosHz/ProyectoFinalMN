@@ -15,14 +15,28 @@ namespace ProyectoFinalMN
     {
         ManejadorSecante MS;
         ManejadorGrafica mg;
+        ManejadorQIA mQUIA;
         double a;
         double b;
         public UCSecante()
         {
             InitializeComponent();
-            MS = new ManejadorSecante();
-            mg = new ManejadorGrafica();
-            mg.InicializarGrafica(pGrafica);
+            /*  MS = new ManejadorSecante();
+              mg = new ManejadorGrafica();
+              mQUIA = new ManejadorQIA();
+              mg.InicializarGrafica(pGrafica);*/
+            Estilos.BotonRedondeado(BtnCalcular, 15);
+            Estilos.BotonRedondeado(BtnGraficar, 15);
+            if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                MS = new ManejadorSecante();
+                mg = new ManejadorGrafica();
+                mQUIA = new ManejadorQIA();
+
+                // Si pGrafica es un panel o control del formulario:
+                if (pGrafica != null)
+                    mg.InicializarGrafica(pGrafica);
+            }
         }
 
      
@@ -45,12 +59,22 @@ namespace ProyectoFinalMN
                 DtgDatos,
                 TxtRaiz
             );
+            Estilos.ResaltarUltimaFila(DtgDatos);
             BtnGraficar.Visible = true;
+
+            rIA.Text = "Generando problema...";
+            mQUIA.GenerarProblemaPro(
+              rIA, FrmPrincipal.FX, "Bisección", $"a={a}, b={b}, tol={TxtTolerancia.Text}, iter={TxtIter.Text}, raiz= {TxtRaiz}"
+            );
+
+            mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xk");
+             
+
         }
 
         private void BtnGraficar_Click(object sender, EventArgs e)
         {
-            mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xk");
+           
         }
     }
 }

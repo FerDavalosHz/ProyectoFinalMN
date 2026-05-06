@@ -45,8 +45,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -54,13 +54,15 @@
             // 
             // TxtRaiz
             // 
-            this.TxtRaiz.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtRaiz.Location = new System.Drawing.Point(123, 7);
+            this.TxtRaiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(202)))));
+            this.TxtRaiz.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRaiz.Location = new System.Drawing.Point(133, 8);
             this.TxtRaiz.Multiline = true;
             this.TxtRaiz.Name = "TxtRaiz";
             this.TxtRaiz.ReadOnly = true;
             this.TxtRaiz.Size = new System.Drawing.Size(217, 37);
             this.TxtRaiz.TabIndex = 0;
+            this.TxtRaiz.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DtgDatos
             // 
@@ -72,7 +74,7 @@
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgDatos.Location = new System.Drawing.Point(364, 3);
             this.DtgDatos.Name = "DtgDatos";
-            this.DtgDatos.Size = new System.Drawing.Size(490, 614);
+            this.DtgDatos.Size = new System.Drawing.Size(490, 569);
             this.DtgDatos.TabIndex = 2;
             // 
             // las
@@ -84,6 +86,7 @@
             this.las.Size = new System.Drawing.Size(92, 15);
             this.las.TabIndex = 3;
             this.las.Text = "Limite inferior. *";
+            this.las.Click += new System.EventHandler(this.las_Click);
             // 
             // label1
             // 
@@ -164,16 +167,16 @@
             // pGrafica
             // 
             this.pGrafica.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pGrafica.Location = new System.Drawing.Point(875, 24);
+            this.pGrafica.Location = new System.Drawing.Point(875, 3);
             this.pGrafica.Name = "pGrafica";
-            this.pGrafica.Size = new System.Drawing.Size(385, 672);
+            this.pGrafica.Size = new System.Drawing.Size(385, 648);
             this.pGrafica.TabIndex = 12;
             // 
             // BtnProblema
             // 
             this.BtnProblema.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnProblema.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnProblema.Location = new System.Drawing.Point(381, 547);
+            this.BtnProblema.Location = new System.Drawing.Point(389, 406);
             this.BtnProblema.Name = "BtnProblema";
             this.BtnProblema.Size = new System.Drawing.Size(159, 44);
             this.BtnProblema.TabIndex = 14;
@@ -188,7 +191,7 @@
             this.rIA.Location = new System.Drawing.Point(19, 308);
             this.rIA.Name = "rIA";
             this.rIA.ReadOnly = true;
-            this.rIA.Size = new System.Drawing.Size(326, 388);
+            this.rIA.Size = new System.Drawing.Size(326, 343);
             this.rIA.TabIndex = 15;
             this.rIA.Text = "";
             // 
@@ -225,32 +228,33 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.TxtRaiz);
-            this.panel1.Location = new System.Drawing.Point(364, 645);
+            this.panel1.Location = new System.Drawing.Point(364, 600);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(490, 51);
             this.panel1.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(360, 620);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 22);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "RESULTADO";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(62, 14);
+            this.label5.Location = new System.Drawing.Point(72, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 22);
             this.label5.TabIndex = 20;
             this.label5.Text = "RAIZ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(360, 575);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 22);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "RESULTADO";
             // 
             // UCBiseccion
             // 
@@ -260,13 +264,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rIA);
-            this.Controls.Add(this.BtnProblema);
             this.Controls.Add(this.pGrafica);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DtgDatos);
+            this.Controls.Add(this.BtnProblema);
             this.Controls.Add(this.panel1);
             this.Name = "UCBiseccion";
-            this.Size = new System.Drawing.Size(1280, 720);
+            this.Size = new System.Drawing.Size(1268, 673);
             this.Load += new System.EventHandler(this.UCBiseccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.groupBox1.ResumeLayout(false);

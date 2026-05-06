@@ -69,13 +69,17 @@ namespace ProyectoFinalMN
                     TxtRaiz
                 );
 
+            Estilos.ResaltarUltimaFila(DtgDatos);
+            BtnProblema.PerformClick();
+            mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xm");
 
-            BtnGraficar.Visible = true;
+
+            //BtnGraficar.Visible = true;
         }
 
         private void BtnGraficar_Click(object sender, EventArgs e)
         {
-            mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xm");
+          
 
         }
 
@@ -89,7 +93,10 @@ namespace ProyectoFinalMN
 
         private void UCBiseccion_Load(object sender, EventArgs e)
         {
-            Estilos.RedondearBoton(BtnCalcular, 15);
+            this.Size = new Size(1268, 673);
+            Estilos.BotonRedondeado(BtnCalcular, 15);
+           // Estilos.TextBoxRedondeado(TxtRaiz, 15);
+            Estilos.EnchularGrid(DtgDatos);
         }
 
      

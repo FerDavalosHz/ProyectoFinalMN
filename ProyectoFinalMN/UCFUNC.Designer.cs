@@ -35,9 +35,8 @@
             // 
             this.pEditor.Location = new System.Drawing.Point(0, 0);
             this.pEditor.Name = "pEditor";
-            this.pEditor.Size = new System.Drawing.Size(831, 315);
+            this.pEditor.Size = new System.Drawing.Size(1268, 673);
             this.pEditor.TabIndex = 0;
-           // this.pEditor.Paint += new System.Windows.Forms.PaintEventHandler(this.pEditor_Paint);
             // 
             // UCFUNC
             // 
@@ -45,7 +44,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pEditor);
             this.Name = "UCFUNC";
-            this.Size = new System.Drawing.Size(831, 315);
+            this.Size = new System.Drawing.Size(1268, 673);
             this.ResumeLayout(false);
 
         }

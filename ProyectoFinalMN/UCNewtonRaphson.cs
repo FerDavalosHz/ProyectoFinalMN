@@ -16,6 +16,7 @@ namespace ProyectoFinalMN
 
         ManejadorNewtonRaphson Mr;
         ManejadorGrafica mg;
+        ManejadorQIA mQUIA;
         double a;
 
         public UCNewtonRaphson()
@@ -50,11 +51,18 @@ namespace ProyectoFinalMN
             );
 
             BtnGraficar.Visible = true;
+
+            rIA.Text = "Generando problema...";
+            mQUIA.GenerarProblemaPro(
+              rIA, FrmPrincipal.FX, "NewtonRaphson", $"Xo={TxtX0.Text}, tol porcentual={TxtTolerancia.Text}, iter={TxtIter.Text}, raiz= {TxtRaiz}"
+            );
+            mg.Graficar(FrmPrincipal.FX, a, a + 3, double.Parse(TxtRaiz.Text), DtgDatos, "xk");
+
         }
 
         private void BtnGraficar_Click(object sender, EventArgs e)
         {
-            mg.Graficar(FrmPrincipal.FX, a, a + 3, double.Parse(TxtRaiz.Text), DtgDatos, "xk");
+          
         }
     }
 }

@@ -15,6 +15,7 @@ namespace ProyectoFinalMN
     {
         ManejadorSecante MS;
         ManejadorGrafica mg;
+        ManejadorQIA mQUIA;
         double a;
         double b;
         public UCSecante()
@@ -22,6 +23,8 @@ namespace ProyectoFinalMN
             InitializeComponent();
             MS = new ManejadorSecante();
             mg = new ManejadorGrafica();
+            mQUIA = new ManejadorQIA();
+
             mg.InicializarGrafica(pGrafica);
         }
 
@@ -46,11 +49,20 @@ namespace ProyectoFinalMN
                 TxtRaiz
             );
             BtnGraficar.Visible = true;
+
+            rIA.Text = "Generando problema...";
+            mQUIA.GenerarProblemaPro(
+              rIA, FrmPrincipal.FX, "Bisección", $"a={a}, b={b}, tol={TxtTolerancia.Text}, iter={TxtIter.Text}, raiz= {TxtRaiz}"
+            );
+
+            mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xk");
+             
+
         }
 
         private void BtnGraficar_Click(object sender, EventArgs e)
         {
-            mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xk");
+           
         }
     }
 }

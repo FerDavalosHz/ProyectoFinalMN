@@ -42,6 +42,8 @@
             this.TxtRaiz = new System.Windows.Forms.TextBox();
             this.pGrafica = new System.Windows.Forms.Panel();
             this.BtnGraficar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rIA = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,10 +170,35 @@
             this.BtnGraficar.Visible = false;
             this.BtnGraficar.Click += new System.EventHandler(this.BtnGraficar_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(20, 294);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(268, 22);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "DETALLES DEL PROBLEMA";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // rIA
+            // 
+            this.rIA.BackColor = System.Drawing.Color.White;
+            this.rIA.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rIA.Location = new System.Drawing.Point(24, 319);
+            this.rIA.Name = "rIA";
+            this.rIA.ReadOnly = true;
+            this.rIA.Size = new System.Drawing.Size(326, 343);
+            this.rIA.TabIndex = 26;
+            this.rIA.Text = "";
+            this.rIA.TextChanged += new System.EventHandler(this.rIA_TextChanged);
+            // 
             // UCFalsaPos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.rIA);
             this.Controls.Add(this.BtnGraficar);
             this.Controls.Add(this.pGrafica);
             this.Controls.Add(this.BtnCalcular);
@@ -188,6 +215,7 @@
             this.Controls.Add(this.TxtRaiz);
             this.Name = "UCFalsaPos";
             this.Size = new System.Drawing.Size(1042, 718);
+            this.Load += new System.EventHandler(this.UCFalsaPos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -210,5 +238,7 @@
         private System.Windows.Forms.TextBox TxtRaiz;
         private System.Windows.Forms.Panel pGrafica;
         private System.Windows.Forms.Button BtnGraficar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox rIA;
     }
 }

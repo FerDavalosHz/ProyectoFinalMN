@@ -34,8 +34,9 @@ namespace ProyectoFinalMN
         {
             MessageBox.Show(FrmPrincipal.FX);
 
-            double a = double.Parse(TxtInferior.Text);
-            double b = double.Parse(TxtSuperior.Text);
+            // 1. YA NO TIENEN LA PALABRA "double" AL INICIO
+            a = double.Parse(TxtInferior.Text);
+            b = double.Parse(TxtSuperior.Text);
             double tol = double.Parse(TxtTolerancia.Text);
             int iter = int.Parse(TxtIter.Text);
 
@@ -71,11 +72,18 @@ namespace ProyectoFinalMN
             );
 
             Estilos.ResaltarUltimaFila(DtgDatos);
-          
+
             rIA.Text = "Generando problema...";
+
+            // 2. LA IA YA TIENE EL .Text CORRECTO
             mQUIA.GenerarProblemaPro(
-              rIA, FrmPrincipal.FX, "Falsa posicion", $"a={TxtInferior.Text}, b={TxtSuperior.Text}, tol={TxtTolerancia.Text}, iter={TxtIter.Text}, raiz= {TxtRaiz}"
-            );
+                    rIA,
+                    FrmPrincipal.FX,
+                    "Falsa posicion",
+                    $"a={TxtInferior.Text}, b={TxtSuperior.Text}, tol={TxtTolerancia.Text}, iter={TxtIter.Text}, raiz={TxtRaiz.Text}"
+                );
+
+            // 3. REGRESAMOS LA GRÁFICA AUTOMÁTICA
             mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xm");
         }
 
@@ -95,6 +103,16 @@ namespace ProyectoFinalMN
         }
 
         private void UCFalsaPos_Load(object sender, EventArgs e)
+        {
+            Estilos.EnchularGrid(DtgDatos);
+
+            // 2. Redondear los botones 
+            // (El número '15' es el radio del borde, puedes subirlo o bajarlo si los quieres más o menos redondos)
+            Estilos.BotonRedondeado(BtnCalcular, 15);
+            Estilos.BotonRedondeado(BtnGraficar, 15);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

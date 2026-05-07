@@ -5,19 +5,48 @@ namespace Manejador
 {
     public class ManejadorNewtonRaphson
     {
-        public void CalcularNewtonRaphson(string fun, double x0, double tol, int maxIter, DataGridView Dt, TextBox txtResultado, int cantidadDec = 4)
+        private static int ClampDec(int n) => Math.Max(0, Math.Min(15, n));
+
+        public void CalcularNewtonRaphson(
+            string fun, double x0, double tol, int maxIter,
+            DataGridView Dt, TextBox txtResultado, int cantidadDec = 4)
         {
+            cantidadDec = ClampDec(cantidadDec);
             ManejadorFuncion mf = new ManejadorFuncion();
 
             try
             {
                 if (string.IsNullOrWhiteSpace(fun))
                 {
-                    MessageBox.Show("No hay función seleccionada");
+                    MessageBox.Show("No hay función seleccionada.");
+                    return;
+                }
+                if (tol <= 0)
+                {
+                    MessageBox.Show("La tolerancia debe ser un valor positivo.");
+                    return;
+                }
+                if (maxIter <= 0)
+                {
+                    MessageBox.Show("El número de iteraciones debe ser mayor a cero.");
                     return;
                 }
 
-                string expresion = mf.ProcesarFuncion(fun);
+                if (!mf.TryProcesar(fun, out string expresion, out string errorProceso))
+                {
+                    MessageBox.Show(errorProceso);
+                    txtResultado.Text = "Error";
+                    return;
+                }
+
+
+                try { mf.Evaluar(expresion, x0); }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al evaluar en x0:\n" + ex.Message);
+                    txtResultado.Text = "Error";
+                    return;
+                }
 
                 Dt.Rows.Clear();
                 Dt.Columns.Clear();
@@ -35,25 +64,38 @@ namespace Manejador
                     double fxk = mf.Evaluar(expresion, xk);
                     double dfxk = DerivadaNumerica(mf, expresion, xk);
 
-                    
                     if (Math.Abs(dfxk) < 1e-12)
                     {
-                        MessageBox.Show("La derivada es cero, el método no puede continuar.");
+                        MessageBox.Show(
+                            $"La derivada es cero (o casi cero) en x = {xk}.\n" +
+                            "El método no puede continuar. Prueba con otro punto inicial.");
                         txtResultado.Text = "Error";
                         return;
                     }
 
-                    
                     double xk1 = xk - fxk / dfxk;
-                    double error = Math.Abs((xk1 - xk) / xk1) * 100;
+
+      
+                    if (double.IsNaN(xk1) || double.IsInfinity(xk1))
+                    {
+                        MessageBox.Show(
+                            $"El método diverge en la iteración {i + 1}.\n" +
+                            "Prueba con un punto inicial más cercano a la raíz.");
+                        txtResultado.Text = "Error";
+                        return;
+                    }
+
+  
+                    double error = Math.Abs(xk1) > 1e-10
+                        ? Math.Abs((xk1 - xk) / xk1) * 100.0
+                        : Math.Abs(xk1 - xk) * 100.0;
 
                     Dt.Rows.Add(
-                        Math.Round(xk, cantidadDec).ToString(),
-                        Math.Round(fxk, cantidadDec).ToString(),
-                        Math.Round(dfxk, cantidadDec).ToString(),
-                        Math.Round(xk1, cantidadDec).ToString(),
-                        Math.Round(error, cantidadDec).ToString() + "%"
-                    );
+                        Math.Round(xk, cantidadDec),
+                        Math.Round(fxk, cantidadDec),
+                        Math.Round(dfxk, cantidadDec),
+                        Math.Round(xk1, cantidadDec),
+                        Math.Round(error, cantidadDec).ToString() + "%");
 
                     if (error < tol)
                     {
@@ -65,11 +107,11 @@ namespace Manejador
                 }
 
                 txtResultado.Text = Math.Round(xk, cantidadDec).ToString();
-                MessageBox.Show("Máximo de iteraciones alcanzado");
+                MessageBox.Show("Se alcanzó el máximo de iteraciones.\nEl resultado puede no ser exacto.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error inesperado:\n" + ex.Message);
                 txtResultado.Text = "Error";
             }
         }
@@ -77,7 +119,7 @@ namespace Manejador
         private double DerivadaNumerica(ManejadorFuncion mf, string expresion, double x)
         {
             double h = 1e-7;
-            return (mf.Evaluar(expresion, x + h) - mf.Evaluar(expresion, x - h)) / (2 * h);
+            return (mf.Evaluar(expresion, x + h) - mf.Evaluar(expresion, x - h)) / (2.0 * h);
         }
     }
 }

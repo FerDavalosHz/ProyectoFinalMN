@@ -53,9 +53,9 @@
             this.X0 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbParametros = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbParametros.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnCalcular
@@ -273,6 +273,7 @@
             this.X1.Name = "X1";
             this.X1.Size = new System.Drawing.Size(131, 22);
             this.X1.TabIndex = 43;
+            this.X1.TextChanged += new System.EventHandler(this.X1_TextChanged);
             // 
             // X0
             // 
@@ -302,21 +303,21 @@
             this.label7.TabIndex = 40;
             this.label7.Text = "X0. *";
             // 
-            // groupBox1
+            // gbParametros
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.Tolerancia);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(20, 25);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 248);
-            this.groupBox1.TabIndex = 49;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Configuracion del metodo";
+            this.gbParametros.BackColor = System.Drawing.Color.White;
+            this.gbParametros.Controls.Add(this.label4);
+            this.gbParametros.Controls.Add(this.label5);
+            this.gbParametros.Controls.Add(this.Tolerancia);
+            this.gbParametros.Controls.Add(this.label6);
+            this.gbParametros.Controls.Add(this.label7);
+            this.gbParametros.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbParametros.Location = new System.Drawing.Point(20, 25);
+            this.gbParametros.Name = "gbParametros";
+            this.gbParametros.Size = new System.Drawing.Size(326, 248);
+            this.gbParametros.TabIndex = 49;
+            this.gbParametros.TabStop = false;
+            this.gbParametros.Text = "Configuracion del metodo";
             // 
             // UCSecante
             // 
@@ -327,7 +328,7 @@
             this.Controls.Add(this.X1);
             this.Controls.Add(this.X0);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbParametros);
             this.Controls.Add(this.rIA);
             this.Controls.Add(this.BtnGraficar);
             this.Controls.Add(this.pGrafica);
@@ -336,9 +337,10 @@
             this.Controls.Add(this.TxtRaiz);
             this.Name = "UCSecante";
             this.Size = new System.Drawing.Size(1042, 718);
+            this.Load += new System.EventHandler(this.UCSecante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbParametros.ResumeLayout(false);
+            this.gbParametros.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,6 +373,6 @@
         private System.Windows.Forms.TextBox X0;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbParametros;
     }
 }

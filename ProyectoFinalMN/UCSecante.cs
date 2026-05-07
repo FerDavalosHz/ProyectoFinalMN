@@ -24,7 +24,7 @@ namespace ProyectoFinalMN
             MS = new ManejadorSecante();
             mg = new ManejadorGrafica();
             mQUIA = new ManejadorQIA();
-
+         
             mg.InicializarGrafica(pGrafica);
         }
 
@@ -40,35 +40,77 @@ namespace ProyectoFinalMN
         {
            
         }
+        bool RevisarGB()
+        {
+            foreach (Control item in gbParametros.Controls)
+            {
+                if (item is TextBox txt)
+                {
+                    if (string.IsNullOrWhiteSpace(txt.Text))
+                    {
+
+                        return false;
+                    }
+                }
+            }
+
+
+            return true;
+        }
+
 
         private void BtnCalc_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(FrmPrincipal.FX);
+            if (!RevisarGB())
+            {
+                MessageBox.Show("Hay campos vacíos, debe llenar todos para continuar", "Error: Campos vacíos");
+                return;
+            }
+          
 
-            a = double.Parse(X0.Text);
-            b = double.Parse(X1.Text);
-            double tol = double.Parse(Tolerancia.Text);
-            int iter = int.Parse(Iterr.Text);
+           if (!double.TryParse(X0.Text, out a) ||
+                !double.TryParse(X1.Text, out b) ||
+                !double.TryParse(Tolerancia.Text, out double tol) ||
+                !int.TryParse(Iterr.Text, out int iter))
+            {
+                MessageBox.Show("Uno o más valores no son números válidos.", "Error: Valor inválido");
+                return;
+            }
+            ManejadorFuncion mf = new ManejadorFuncion();
+            if (!mf.TryProcesar(FrmPrincipal.FX, out string expresion, out string errorProceso))
+            {
+                MessageBox.Show(errorProceso, "Error en la función");
+                return;
+            }
+         
 
-            MS.CalcularSecante(
-                FrmPrincipal.FX,
-                a,
-                b,
-                tol,
-                iter,
-                DtgDatos,
-                TxtRaiz
-            );
+
+            MS.CalcularSecante(FrmPrincipal.FX, a, b, tol, iter, DtgDatos, TxtRaiz);
+
+            if (TxtRaiz.Text == "Error") return;
+
             Estilos.ResaltarUltimaFila(DtgDatos);
-            BtnGraficar.Visible = true;
+           // BtnProblema.PerformClick();
 
-            rIA.Text = "Generando problema...";
+            if (double.TryParse(TxtRaiz.Text, out double raiz))
+                mg.Graficar(FrmPrincipal.FX, a , b , raiz, DtgDatos, "xk");
+
             mQUIA.GenerarProblemaPro(
-              rIA, FrmPrincipal.FX, "Secante", $"a={a}, b={b}, tol={TxtTolerancia.Text}, iter={TxtIter.Text}, raiz= {TxtRaiz}"
-            );
+               rIA, FrmPrincipal.FX, "Falsa posicion",
+               $"X0={X0.Text}, X1={X1.Text}, " +
+               $"tol={TxtTolerancia.Text}%, iter={TxtIter.Text}, " +
+               $"raiz={TxtRaiz.Text}");
+        }
 
-            mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xk");
+        private void X1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void UCSecante_Load(object sender, EventArgs e)
+        {
+            X0.Text = "";
+            X1.Text = "";
         }
     }
 }

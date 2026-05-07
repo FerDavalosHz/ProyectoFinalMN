@@ -5,25 +5,80 @@ namespace Manejador
 {
     public class ManejadorBiseccion
     {
-        public void CalcularBiseccion(string fun, double a, double b, double tol, int maxIter, DataGridView Dt, TextBox txtResultado, int cantidadDec = 3)
+        private static int ClampDec(int n) => Math.Max(0, Math.Min(15, n));
+
+        public void CalcularBiseccion(
+            string fun, double a, double b, double tol, int maxIter,
+            DataGridView Dt, TextBox txtResultado, int cantidadDec = 3)
         {
+            cantidadDec = ClampDec(cantidadDec);
             ManejadorFuncion mf = new ManejadorFuncion();
 
             try
             {
                 if (string.IsNullOrWhiteSpace(fun))
                 {
-                    MessageBox.Show("No hay función seleccionada");
+                    MessageBox.Show("No hay función seleccionada.");
                     return;
                 }
-
                 if (a >= b)
                 {
-                    MessageBox.Show("El límite inferior debe ser menor que el superior");
+                    MessageBox.Show("El límite inferior debe ser estrictamente menor que el superior.");
+                    return;
+                }
+                if (tol <= 0)
+                {
+                    MessageBox.Show("La tolerancia debe ser un valor positivo.");
+                    return;
+                }
+                if (maxIter <= 0)
+                {
+                    MessageBox.Show("El número de iteraciones debe ser mayor a cero.");
                     return;
                 }
 
-                string expresion = mf.ProcesarFuncion(fun);
+                if (!mf.TryProcesar(fun, out string expresion, out string errorProceso))
+                {
+                    MessageBox.Show(errorProceso);
+                    txtResultado.Text = "Error";
+                    return;
+                }
+
+                double fa, fb;
+                try
+                {
+                    fa = mf.Evaluar(expresion, a);
+                    fb = mf.Evaluar(expresion, b);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al evaluar en los extremos del intervalo:\n" + ex.Message);
+                    txtResultado.Text = "Error";
+                    return;
+                }
+
+                if (fa * fb > 0)
+                {
+                    MessageBox.Show(
+                        $"El intervalo [{a}, {b}] no garantiza una raíz.\n" +
+                        $"f(a) = {fa}\nf(b) = {fb}\n\n" +
+                        "f(a) y f(b) deben tener signos opuestos.");
+                    txtResultado.Text = "Error";
+                    return;
+                }
+
+                if (Math.Abs(fa) < tol)
+                {
+                    txtResultado.Text = Math.Round(a, cantidadDec).ToString();
+                    MessageBox.Show($"El extremo a = {a} ya es raíz (f(a) ≈ 0).");
+                    return;
+                }
+                if (Math.Abs(fb) < tol)
+                {
+                    txtResultado.Text = Math.Round(b, cantidadDec).ToString();
+                    MessageBox.Show($"El extremo b = {b} ya es raíz (f(b) ≈ 0).");
+                    return;
+                }
 
                 Dt.Rows.Clear();
                 Dt.Columns.Clear();
@@ -32,31 +87,16 @@ namespace Manejador
                 Dt.Columns.Add("xa", "xa");
                 Dt.Columns.Add("xb", "xb");
                 Dt.Columns.Add("xm", "xm");
-                Dt.Columns.Add("f(xm)", "f(xm)");
-                Dt.Columns.Add("f(xa)", "f(xa)");
+                Dt.Columns.Add("fxm", "f(xm)");
+                Dt.Columns.Add("fxa", "f(xa)");
 
-                double fa = mf.Evaluar(expresion, a);
-                double fb = mf.Evaluar(expresion, b);
+                Dt.Rows.Add("0",
+                    Math.Round(a, cantidadDec),
+                    Math.Round(b, cantidadDec),
+                    "-", "-", "-");
 
-                if (fa * fb > 0)
-                {
-                    MessageBox.Show($"El intervalo no contiene raíz\nf(a)={fa}, f(b)={fb}");
-                    txtResultado.Text = "Error";
-                    return;
-                }
-
-                // Fila 0 — sin xm ni f(xm) ni f(xa)
-                Dt.Rows.Add(
-                    "0",
-                    Math.Round(a, cantidadDec).ToString(),
-                    Math.Round(b, cantidadDec).ToString(),
-                    "-",
-                    "-",
-                    "-"
-                );
-
-                double c = 0;
-                double fc = 0;
+                double c = a;
+                double fc = fa;
 
                 for (int i = 1; i <= maxIter; i++)
                 {
@@ -66,14 +106,21 @@ namespace Manejador
 
                     Dt.Rows.Add(
                         i.ToString(),
-                        Math.Round(a, cantidadDec).ToString(),
-                        Math.Round(b, cantidadDec).ToString(),
-                        Math.Round(c, cantidadDec).ToString(),
-                        Math.Round(fc, cantidadDec).ToString(),
-                        Math.Round(fa, cantidadDec).ToString()
-                    );
+                        Math.Round(a, cantidadDec),
+                        Math.Round(b, cantidadDec),
+                        Math.Round(c, cantidadDec),
+                        Math.Round(fc, cantidadDec),
+                        Math.Round(fa, cantidadDec));
 
+                    // Convergencia por valor de función
                     if (Math.Abs(fc) < tol)
+                    {
+                        txtResultado.Text = Math.Round(c, cantidadDec).ToString();
+                        return;
+                    }
+
+                    // Convergencia por tamaño de intervalo
+                    if ((b - a) / 2.0 < tol)
                     {
                         txtResultado.Text = Math.Round(c, cantidadDec).ToString();
                         return;
@@ -86,11 +133,11 @@ namespace Manejador
                 }
 
                 txtResultado.Text = Math.Round(c, cantidadDec).ToString();
-                MessageBox.Show("Máximo de iteraciones alcanzado");
+                MessageBox.Show("Se alcanzó el máximo de iteraciones.\nEl resultado puede no ser exacto.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error inesperado:\n" + ex.Message);
                 txtResultado.Text = "Error";
             }
         }

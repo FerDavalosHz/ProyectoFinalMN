@@ -42,13 +42,13 @@
             this.pGrafica = new System.Windows.Forms.Panel();
             this.BtnProblema = new System.Windows.Forms.Button();
             this.rIA = new System.Windows.Forms.RichTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbParametros = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbParametros.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,26 +195,26 @@
             this.rIA.TabIndex = 15;
             this.rIA.Text = "";
             // 
-            // groupBox1
+            // gbParametros
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.las);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lasdal);
-            this.groupBox1.Controls.Add(this.TxtInferior);
-            this.groupBox1.Controls.Add(this.TxtSuperior);
-            this.groupBox1.Controls.Add(this.TxtTolerancia);
-            this.groupBox1.Controls.Add(this.TxtIter);
-            this.groupBox1.Controls.Add(this.BtnCalcular);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(19, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 265);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Configuracion del metodo";
+            this.gbParametros.BackColor = System.Drawing.Color.White;
+            this.gbParametros.Controls.Add(this.label1);
+            this.gbParametros.Controls.Add(this.las);
+            this.gbParametros.Controls.Add(this.label2);
+            this.gbParametros.Controls.Add(this.lasdal);
+            this.gbParametros.Controls.Add(this.TxtInferior);
+            this.gbParametros.Controls.Add(this.TxtSuperior);
+            this.gbParametros.Controls.Add(this.TxtTolerancia);
+            this.gbParametros.Controls.Add(this.TxtIter);
+            this.gbParametros.Controls.Add(this.BtnCalcular);
+            this.gbParametros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbParametros.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbParametros.Location = new System.Drawing.Point(19, 3);
+            this.gbParametros.Name = "gbParametros";
+            this.gbParametros.Size = new System.Drawing.Size(326, 265);
+            this.gbParametros.TabIndex = 16;
+            this.gbParametros.TabStop = false;
+            this.gbParametros.Text = "Configuracion del metodo";
             // 
             // label3
             // 
@@ -265,7 +265,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rIA);
             this.Controls.Add(this.pGrafica);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbParametros);
             this.Controls.Add(this.DtgDatos);
             this.Controls.Add(this.BtnProblema);
             this.Controls.Add(this.panel1);
@@ -273,8 +273,8 @@
             this.Size = new System.Drawing.Size(1268, 673);
             this.Load += new System.EventHandler(this.UCBiseccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbParametros.ResumeLayout(false);
+            this.gbParametros.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -298,7 +298,7 @@
         private System.Windows.Forms.Panel pGrafica;
         private System.Windows.Forms.Button BtnProblema;
         private System.Windows.Forms.RichTextBox rIA;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbParametros;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;

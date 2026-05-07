@@ -44,6 +44,16 @@
             this.BtnGraficar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.rIA = new System.Windows.Forms.RichTextBox();
+            this.BtnCalc = new System.Windows.Forms.Button();
+            this.Iterr = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Tolerancia = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.X1 = new System.Windows.Forms.TextBox();
+            this.X0 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -158,6 +168,7 @@
             // 
             // TxtRaiz
             // 
+            this.TxtRaiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(235)))), ((int)(((byte)(202)))));
             this.TxtRaiz.Location = new System.Drawing.Point(422, 365);
             this.TxtRaiz.Multiline = true;
             this.TxtRaiz.Name = "TxtRaiz";
@@ -190,7 +201,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 302);
+            this.label3.Location = new System.Drawing.Point(16, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(268, 22);
             this.label3.TabIndex = 39;
@@ -200,18 +211,123 @@
             // 
             this.rIA.BackColor = System.Drawing.Color.White;
             this.rIA.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rIA.Location = new System.Drawing.Point(20, 327);
+            this.rIA.Location = new System.Drawing.Point(20, 339);
             this.rIA.Name = "rIA";
             this.rIA.ReadOnly = true;
-            this.rIA.Size = new System.Drawing.Size(326, 343);
+            this.rIA.Size = new System.Drawing.Size(326, 355);
             this.rIA.TabIndex = 38;
             this.rIA.Text = "";
+            // 
+            // BtnCalc
+            // 
+            this.BtnCalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(146)))), ((int)(((byte)(154)))));
+            this.BtnCalc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCalc.Location = new System.Drawing.Point(26, 218);
+            this.BtnCalc.Name = "BtnCalc";
+            this.BtnCalc.Size = new System.Drawing.Size(314, 49);
+            this.BtnCalc.TabIndex = 48;
+            this.BtnCalc.Text = "Calcular";
+            this.BtnCalc.UseVisualStyleBackColor = false;
+            this.BtnCalc.Click += new System.EventHandler(this.BtnCalc_Click);
+            // 
+            // Iterr
+            // 
+            this.Iterr.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Iterr.Location = new System.Drawing.Point(217, 175);
+            this.Iterr.Name = "Iterr";
+            this.Iterr.Size = new System.Drawing.Size(67, 22);
+            this.Iterr.TabIndex = 47;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(22, 153);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(169, 15);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "Maximo numero de iteraciones";
+            // 
+            // Tolerancia
+            // 
+            this.Tolerancia.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tolerancia.Location = new System.Drawing.Point(111, 107);
+            this.Tolerancia.Name = "Tolerancia";
+            this.Tolerancia.Size = new System.Drawing.Size(153, 22);
+            this.Tolerancia.TabIndex = 45;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(22, 110);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 15);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "Tolerancia %*";
+            // 
+            // X1
+            // 
+            this.X1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.X1.Location = new System.Drawing.Point(153, 95);
+            this.X1.Name = "X1";
+            this.X1.Size = new System.Drawing.Size(131, 22);
+            this.X1.TabIndex = 43;
+            // 
+            // X0
+            // 
+            this.X0.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.X0.Location = new System.Drawing.Point(153, 54);
+            this.X0.Name = "X0";
+            this.X0.Size = new System.Drawing.Size(131, 22);
+            this.X0.TabIndex = 42;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(22, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 15);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "X1. *";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(22, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 15);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "X0. *";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.Tolerancia);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(20, 25);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(326, 248);
+            this.groupBox1.TabIndex = 49;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Configuracion del metodo";
             // 
             // UCSecante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BtnCalc);
+            this.Controls.Add(this.Iterr);
+            this.Controls.Add(this.X1);
+            this.Controls.Add(this.X0);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rIA);
             this.Controls.Add(this.BtnGraficar);
             this.Controls.Add(this.pGrafica);
@@ -246,5 +362,15 @@
         private System.Windows.Forms.Button BtnGraficar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox rIA;
+        private System.Windows.Forms.Button BtnCalc;
+        private System.Windows.Forms.TextBox Iterr;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox Tolerancia;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox X1;
+        private System.Windows.Forms.TextBox X0;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

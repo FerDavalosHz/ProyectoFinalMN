@@ -32,12 +32,23 @@ namespace ProyectoFinalMN
 
         private void BtnCalcular_Click_1(object sender, EventArgs e)
         {
+          
+
+        }
+
+        private void BtnGraficar_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void BtnCalc_Click(object sender, EventArgs e)
+        {
             MessageBox.Show(FrmPrincipal.FX);
 
-             a = double.Parse(TxtX0.Text);
-             b = double.Parse(TxtX1.Text);
-            double tol = double.Parse(TxtTolerancia.Text);
-            int iter = int.Parse(TxtIter.Text);
+            a = double.Parse(X0.Text);
+            b = double.Parse(X1.Text);
+            double tol = double.Parse(Tolerancia.Text);
+            int iter = int.Parse(Iterr.Text);
 
             MS.CalcularSecante(
                 FrmPrincipal.FX,
@@ -53,17 +64,11 @@ namespace ProyectoFinalMN
 
             rIA.Text = "Generando problema...";
             mQUIA.GenerarProblemaPro(
-              rIA, FrmPrincipal.FX, "Bisección", $"a={a}, b={b}, tol={TxtTolerancia.Text}, iter={TxtIter.Text}, raiz= {TxtRaiz}"
+              rIA, FrmPrincipal.FX, "Secante", $"a={a}, b={b}, tol={TxtTolerancia.Text}, iter={TxtIter.Text}, raiz= {TxtRaiz}"
             );
 
             mg.Graficar(FrmPrincipal.FX, a, b, double.Parse(TxtRaiz.Text), DtgDatos, "xk");
-             
 
-        }
-
-        private void BtnGraficar_Click(object sender, EventArgs e)
-        {
-           
         }
     }
 }

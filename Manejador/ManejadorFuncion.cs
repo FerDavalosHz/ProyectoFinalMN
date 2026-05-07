@@ -30,7 +30,6 @@ namespace Manejador
 
         private string ConvertirFunciones(string expr)
         {
-            // mxparser usa estos nombres nativamente
             expr = expr.Replace(@"\arctan", "arctan");
             expr = expr.Replace(@"\arcsin", "arcsin");
             expr = expr.Replace(@"\arccos", "arccos");

@@ -45,79 +45,91 @@
             this.label3 = new System.Windows.Forms.Label();
             this.rIA = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnCalcular
             // 
-            this.BtnCalcular.Location = new System.Drawing.Point(205, 219);
+            this.BtnCalcular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(146)))), ((int)(((byte)(154)))));
+            this.BtnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCalcular.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCalcular.Location = new System.Drawing.Point(6, 182);
             this.BtnCalcular.Name = "BtnCalcular";
-            this.BtnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.BtnCalcular.Size = new System.Drawing.Size(314, 45);
             this.BtnCalcular.TabIndex = 35;
             this.BtnCalcular.Text = "Calcular";
-            this.BtnCalcular.UseVisualStyleBackColor = true;
+            this.BtnCalcular.UseVisualStyleBackColor = false;
             this.BtnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click_1);
             // 
             // TxtIter
             // 
-            this.TxtIter.Location = new System.Drawing.Point(213, 167);
+            this.TxtIter.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIter.Location = new System.Drawing.Point(198, 144);
             this.TxtIter.Name = "TxtIter";
-            this.TxtIter.Size = new System.Drawing.Size(67, 20);
+            this.TxtIter.Size = new System.Drawing.Size(122, 20);
             this.TxtIter.TabIndex = 34;
             // 
             // lasdal
             // 
             this.lasdal.AutoSize = true;
-            this.lasdal.Location = new System.Drawing.Point(57, 170);
+            this.lasdal.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lasdal.Location = new System.Drawing.Point(23, 146);
             this.lasdal.Name = "lasdal";
-            this.lasdal.Size = new System.Drawing.Size(150, 13);
+            this.lasdal.Size = new System.Drawing.Size(169, 15);
             this.lasdal.TabIndex = 33;
             this.lasdal.Text = "Maximo numero de iteraciones";
             // 
             // TxtTolerancia
             // 
-            this.TxtTolerancia.Location = new System.Drawing.Point(149, 120);
+            this.TxtTolerancia.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTolerancia.Location = new System.Drawing.Point(118, 102);
             this.TxtTolerancia.Name = "TxtTolerancia";
-            this.TxtTolerancia.Size = new System.Drawing.Size(131, 20);
+            this.TxtTolerancia.Size = new System.Drawing.Size(202, 20);
             this.TxtTolerancia.TabIndex = 32;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 127);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(23, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.Size = new System.Drawing.Size(83, 15);
             this.label2.TabIndex = 31;
             this.label2.Text = "Tolerancia %*";
             // 
             // TxtX1
             // 
-            this.TxtX1.Location = new System.Drawing.Point(149, 87);
+            this.TxtX1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtX1.Location = new System.Drawing.Point(118, 63);
             this.TxtX1.Name = "TxtX1";
-            this.TxtX1.Size = new System.Drawing.Size(131, 20);
+            this.TxtX1.Size = new System.Drawing.Size(202, 20);
             this.TxtX1.TabIndex = 30;
             // 
             // TxtX0
             // 
-            this.TxtX0.Location = new System.Drawing.Point(149, 46);
+            this.TxtX0.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtX0.Location = new System.Drawing.Point(118, 33);
             this.TxtX0.Name = "TxtX0";
-            this.TxtX0.Size = new System.Drawing.Size(131, 20);
+            this.TxtX0.Size = new System.Drawing.Size(202, 21);
             this.TxtX0.TabIndex = 29;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 90);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(23, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(35, 15);
             this.label1.TabIndex = 28;
             this.label1.Text = "X1. *";
             // 
             // las
             // 
             this.las.AutoSize = true;
-            this.las.Location = new System.Drawing.Point(54, 49);
+            this.las.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.las.Location = new System.Drawing.Point(23, 36);
             this.las.Name = "las";
-            this.las.Size = new System.Drawing.Size(30, 13);
+            this.las.Size = new System.Drawing.Size(35, 15);
             this.las.TabIndex = 27;
             this.las.Text = "X0. *";
             // 
@@ -137,15 +149,16 @@
             // Raiz
             // 
             this.Raiz.AutoSize = true;
-            this.Raiz.Location = new System.Drawing.Point(388, 377);
+            this.Raiz.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Raiz.Location = new System.Drawing.Point(373, 372);
             this.Raiz.Name = "Raiz";
-            this.Raiz.Size = new System.Drawing.Size(28, 13);
+            this.Raiz.Size = new System.Drawing.Size(43, 21);
             this.Raiz.TabIndex = 25;
             this.Raiz.Text = "Raiz";
             // 
             // TxtRaiz
             // 
-            this.TxtRaiz.Location = new System.Drawing.Point(422, 364);
+            this.TxtRaiz.Location = new System.Drawing.Point(422, 365);
             this.TxtRaiz.Multiline = true;
             this.TxtRaiz.Name = "TxtRaiz";
             this.TxtRaiz.ReadOnly = true;
@@ -161,12 +174,15 @@
             // 
             // BtnGraficar
             // 
+            this.BtnGraficar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(146)))), ((int)(((byte)(154)))));
+            this.BtnGraficar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGraficar.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGraficar.Location = new System.Drawing.Point(908, 365);
             this.BtnGraficar.Name = "BtnGraficar";
             this.BtnGraficar.Size = new System.Drawing.Size(117, 37);
             this.BtnGraficar.TabIndex = 37;
             this.BtnGraficar.Text = "Graficar";
-            this.BtnGraficar.UseVisualStyleBackColor = true;
+            this.BtnGraficar.UseVisualStyleBackColor = false;
             this.BtnGraficar.Visible = false;
             this.BtnGraficar.Click += new System.EventHandler(this.BtnGraficar_Click);
             // 
@@ -199,21 +215,14 @@
             this.Controls.Add(this.rIA);
             this.Controls.Add(this.BtnGraficar);
             this.Controls.Add(this.pGrafica);
-            this.Controls.Add(this.BtnCalcular);
-            this.Controls.Add(this.TxtIter);
-            this.Controls.Add(this.lasdal);
-            this.Controls.Add(this.TxtTolerancia);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.TxtX1);
-            this.Controls.Add(this.TxtX0);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.las);
             this.Controls.Add(this.DtgDatos);
             this.Controls.Add(this.Raiz);
             this.Controls.Add(this.TxtRaiz);
             this.Name = "UCSecante";
             this.Size = new System.Drawing.Size(1042, 718);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

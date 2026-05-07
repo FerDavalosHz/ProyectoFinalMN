@@ -99,6 +99,9 @@ namespace ProyectoFinalMN
             Estilos.EnchularGrid(DtgDatos);
         }
 
-     
+        private void las_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

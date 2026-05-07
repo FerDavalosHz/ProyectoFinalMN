@@ -48,6 +48,7 @@ namespace ProyectoFinalMN
                 DtgDatos,
                 TxtRaiz
             );
+            Estilos.ResaltarUltimaFila(DtgDatos);
             BtnGraficar.Visible = true;
 
             rIA.Text = "Generando problema...";

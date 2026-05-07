@@ -86,6 +86,7 @@
             this.las.Size = new System.Drawing.Size(92, 15);
             this.las.TabIndex = 3;
             this.las.Text = "Limite inferior. *";
+            this.las.Click += new System.EventHandler(this.las_Click);
             // 
             // label1
             // 

@@ -64,5 +64,10 @@ namespace ProyectoFinalMN
         {
           
         }
+
+        private void UCNewtonRaphson_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

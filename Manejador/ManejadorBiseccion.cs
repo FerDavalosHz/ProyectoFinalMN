@@ -112,14 +112,12 @@ namespace Manejador
                         Math.Round(fc, cantidadDec),
                         Math.Round(fa, cantidadDec));
 
-                    // Convergencia por valor de función
                     if (Math.Abs(fc) < tol)
                     {
                         txtResultado.Text = Math.Round(c, cantidadDec).ToString();
                         return;
                     }
 
-                    // Convergencia por tamaño de intervalo
                     if ((b - a) / 2.0 < tol)
                     {
                         txtResultado.Text = Math.Round(c, cantidadDec).ToString();
